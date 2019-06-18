@@ -49,6 +49,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 	}
 	
+	
 	@Bean
 	public UserDetailsManager userDetailsManager() {
 		

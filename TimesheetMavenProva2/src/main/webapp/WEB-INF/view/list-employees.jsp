@@ -102,6 +102,10 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		</div>
 		
 		<br>
+		<hr>
+		<a href="${pageContext.request.contextPath}/ticket/list">Go to the ticket list</a>
+		
+		<br>
 			<!-- add a logout button -->
 	
 	<form:form action="${pageContext.request.contextPath}/logout" method="POST">

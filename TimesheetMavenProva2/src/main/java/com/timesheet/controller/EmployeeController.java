@@ -83,10 +83,10 @@ public class EmployeeController {
     public String searchEmployees(@RequestParam("theSearchName") String theSearchName,
                                     Model theModel) {
 
-        // search customers from the service
+        // search employees from the service
         List<Employee> theEmployees = employeeService.searchEmployees(theSearchName);
                 
-        // add the customers to the model
+        // add the employees to the model
         theModel.addAttribute("employees", theEmployees);
 
         return "list-employees";        
