@@ -23,7 +23,7 @@ href="${pageContext.request.contextPath}/resources/css/add-employee-style.css"/>
 	</div>
 	
 	<div id="container">
-		<h3>Save Employee</h3>
+		<h3>Save Ticket</h3>
 		
 		<form:form action="saveTicket" modelAttribute="ticket" method="POST">
 		
@@ -73,16 +73,13 @@ href="${pageContext.request.contextPath}/resources/css/add-employee-style.css"/>
 					<td><label>Note:</label></td>
 					<td><form:input path="note"/></td>
 				</tr>
-				</tr>
 					<tr>
 					<td><label>Ticket Status:</label></td>
 					<td><form:input path="ticketStatus"/></td>
 				</tr>
-				</tr>
 					<tr>
 					<td><label>Ticket Source:</label></td>
 					<td><form:input path="ticketSource"/></td>
-				</tr>
 				</tr>
 					<tr>
 					<td><label>Ticket Type:</label></td>

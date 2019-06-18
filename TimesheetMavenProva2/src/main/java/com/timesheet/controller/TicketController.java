@@ -48,7 +48,7 @@ public class TicketController {
 		//save the ticket using the service
 		ticketService.saveTicket(theTicket);
 		
-		return "redirect:/ticket/listTickets";
+		return "redirect:/ticket/list";
 	}
 	
 	@GetMapping("/showFormForUpdate")
@@ -58,7 +58,7 @@ public class TicketController {
 		//get the ticket from service
 		Ticket theTicket=ticketService.getTicket(theId);
 		
-		//set ticket as a model attribute to pre-polate the form
+		//set ticket as a model attribute to pre-populate the form
 		theModel.addAttribute("ticket", theTicket);
 		
 		//send over to the form
