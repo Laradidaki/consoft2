@@ -7,13 +7,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Akronim|Sofia|Stylish" rel="stylesheet">
+<link rel="stylesheet" 
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+	crossorigin="anonymous">
+	
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" 
+	integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" 
+	crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>List Employees</title>
 <link type="text/css" rel="stylesheet" 
 href="${pageContext.request.contextPath}/resources/css/style.css"/>
+
 </head>
 <body>
-	
+	 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+        <a class="nav-link" href="${pageContext.request.contextPath}/employee/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/ticket/list">Ticket</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/employee/list">Dipendenti</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/logout">Logout</a>
+      </li>
+   </ul>
+        </div>
+</nav>
 	<div id="wrapper">
 		<div id="header">
 			<h2>ERM - Employee Relationship Manager</h2>
@@ -103,15 +131,27 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		
 		<br>
 		<hr>
-		<a href="${pageContext.request.contextPath}/ticket/list">Go to the ticket list</a>
+		<a href="${pageContext.request.contextPath}/ticket/list" class=linkticket>Go to the ticket list</a>
 		
 		<br>
 			<!-- add a logout button -->
 	
 	<form:form action="${pageContext.request.contextPath}/logout" method="POST">
-	<input type="submit" value="Logout"/>
+	<input type="submit" value="Logout" class="logout"/>
 	</form:form>
 	
 	</div>
+	
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
 </body>
 </html>

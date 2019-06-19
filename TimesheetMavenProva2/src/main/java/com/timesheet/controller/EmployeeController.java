@@ -23,6 +23,12 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 	
+	@GetMapping("/home")
+	public String home() {
+	
+		return "home";
+	}
+	
 	@GetMapping("/list")
 	public String listEmployee(Model theModel) {
 		

@@ -17,17 +17,30 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	
 	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+	<style type="text/css">
+	body {
+ background-image: url("astratto.jpg");
+ }
+	.login{
+		position:absolute;
+		top:15%;
+		left:50%;
+		bottom:30%;
+		width:400px;
+		height:200px;
+		margin-left:-200px;
+		margin-top: -100px;
+	}
+	</style>
 </head>
 
 <body>
 
 	<div>
 		
-		<div id="loginbox" style="margin-top: 50px;"
-			class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
+		<div id="loginbox" style="margin-top: 50px;" class="login">
 			
-			<div class="panel panel-info">
+			<div class="panel panel-info"style="align:center !important;">
 
 				<div class="panel-heading">
 					<div class="panel-title">Sign In</div>

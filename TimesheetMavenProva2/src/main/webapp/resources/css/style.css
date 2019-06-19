@@ -4,7 +4,8 @@ html, body{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 }
 
-table {   
+table {  
+	
 	border-collapse:collapse;
 	border-bottom:1px solid gray;
 	font-family: Tahoma,Verdana,Segoe,sans-serif;
@@ -13,7 +14,7 @@ table {
  
 th {
 	border-bottom:1px solid gray;
-	background:none repeat scroll 0 0 #09c332;
+	background:none repeat scroll 0 0 #210873;
 	padding:10px;
 	color: #FFFFFF;
 }
@@ -27,11 +28,14 @@ tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #BBBBBB}	
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 70%; background: #09c332; margin-top: 0px; padding:15px 0px 15px 15px;}
+#header {width: 70%; position:relative; left:12%; background: #210873; margin-top: 0px; padding:15px 0px 15px 15px;}
 #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}
-#container #content {margin-top: 20px;}
+#container #content {margin-top: 20px;
+						position:relative;
+					left:12%;
+						}
 
 .add-button {
 	border: 1px solid #666; 
@@ -44,4 +48,23 @@ tr:nth-child(odd) {background: #BBBBBB}
 	
 	margin-bottom: 15px;
 	background: #cccccc;
+}
+.linkticket{
+	position:relative; left:12%;
+	text-decoration:none;
+	color:black;
+	font-size:20px;
+}
+.linkticket:hover{
+	color:#210873;
+	text-decoration:none;
+}
+
+.logout{
+	position:relative; left:12%;
+	margin-top:30px; 
+}
+.navbar{
+	position:relative; left:12%; width:70%;
+	margin-top:30px !important}
 }

@@ -47,6 +47,7 @@ public class DemoAppConfig implements WebMvcConfigurer{
 		viewResolver.setPrefix("/WEB-INF/view/");
 		viewResolver.setSuffix(".jsp");
 		
+		
 		return viewResolver;
 	}
 	

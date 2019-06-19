@@ -8,6 +8,6 @@
 </head>
 <body>
 
-<%response.sendRedirect("employee/list"); %>
+<%response.sendRedirect("employee/home"); %>
 </body>
 </html>
