@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.timesheet.dao.EmployeeDao;
 import com.timesheet.entity.Employee;
+import com.timesheet.entity.Ticket;
 import com.timesheet.service.EmployeeService;
 
 @Controller
@@ -66,7 +67,7 @@ public class EmployeeController {
 									Model theModel) {
 		
 		//get the employee from service
-		Employee theEmployee=employeeService.getEmployee(theId);
+		Employee theEmployee=(Employee) employeeService.getEmployee(theId);
 		
 		//set employee as a model attribute to pre-polate the form
 		theModel.addAttribute("employee", theEmployee);

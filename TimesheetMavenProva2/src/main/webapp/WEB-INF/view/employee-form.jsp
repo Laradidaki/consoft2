@@ -42,12 +42,12 @@ href="${pageContext.request.contextPath}/resources/css/add-employee-style.css"/>
 					<td><form:input path="lastName"/></td>
 				</tr>
 				<tr>
-					<td><label>Client:</label></td>
-					<td><form:input path="client"/></td>
-				</tr>
-				<tr>
 					<td><label>Work Hours:</label></td>
 					<td><form:input path="workHours"/></td>
+				</tr>
+				<tr>
+					<td><label>ID Manager:</label></td>
+					<td><form:input path="manager"/></td>
 				</tr>
 				
 				<tr>

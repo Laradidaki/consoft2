@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+li{
+	
+	color:indigo;
+	font-size: 20px;
+	float:right;
+	margin-right:20px;
+	margin-top:5px;
+}
+
+a{
+	font-family: 'Indie Flower', cursive;
+	
+}
+.navbar{
+	width:100% ;
+	background-color:black !important;
+}
+.navbar-nav{
+	margin-bottom:5px !important;
+	position:relative;
+	left:28%;
+
+}
+#logout{
+	background-color:black;
+	border-color:black;
+	font-family: 'Indie Flower', cursive;
+	position:relative;
+	left:620%;
+}
+
+ul{    padding-inline-start: 20px !important;
+}

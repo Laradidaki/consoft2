@@ -13,38 +13,19 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
 	crossorigin="anonymous">
 	
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" 
-	integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" 
-	crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>List Employees</title>
 <link type="text/css" rel="stylesheet" 
 href="${pageContext.request.contextPath}/resources/css/style.css"/>
+<link type="text/html" 
+href="${pageContext.request.contextPath}/resources/html/navbar.html"/>
 
 </head>
 <body>
-	 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-        <li class="nav-item active">
-        <a class="nav-link" href="${pageContext.request.contextPath}/employee/home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/ticket/list">Ticket</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/employee/list">Dipendenti</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/logout">Logout</a>
-      </li>
-   </ul>
-        </div>
-</nav>
+<jsp:include page="navbar.jsp" />
 	<div id="wrapper">
 		<div id="header">
-			<h2>ERM - Employee Relationship Manager</h2>
+			<h2>Employees' List</h2>
 	
 		</div>
 	</div>
@@ -64,8 +45,8 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 				User: <security:authentication property="principal.username" />, Role(s): <security:authentication property="principal.authorities" />
 			</p>
 	
-			<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')">
-            
+	
+			<security:authorize access="hasAnyRole('MANAGER')">
 		
 		<input type="button" value="Add Employee"
 		onclick="window.location.href='showFormForAdd'; return false;"
@@ -76,13 +57,15 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		
 		<table>
 		<tr>
+		<th>ID Employee</th>
 		<th>Last name</th>
 		<th>First name</th>
-		<th>Client</th>
 		<th>Work hours</th>
+		<th>ID Manager</th>
 		
-			<%-- Only show "Action" column for managers or admin --%>
-					<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')">
+		
+			<%-- show "Action" column for managers,employees and "special" employees --%>
+					<security:authorize access="hasAnyRole('MANAGER','S_EMPLOYEE', 'EMPLOYEE')">
 					
 						<th>Action</th>
 					
@@ -90,6 +73,11 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		</tr>
 		
 		<c:forEach var="tempEmployee" items="${employees}">
+		
+		<!-- construct a "detail" link with the association beetween employee id
+		     and ticket id -->
+		 
+		 
 		
 		<!-- construct an "update" link with employee id -->
 		<c:url var="updateLink" value="/employee/showFormForUpdate">
@@ -102,20 +90,21 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		</c:url>
 		
 		<tr>
+		<td> ${tempEmployee.idEmployee} </td>
 		<td> ${tempEmployee.lastName} </td>
 		<td> ${tempEmployee.firstName} </td>
-		<td> ${tempEmployee.client} </td>
 		<td> ${tempEmployee.workHours} </td>
+		<td> ${tempEmployee.manager} </td>
 		
-			<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')">
+			<security:authorize access="hasAnyRole('MANAGER', 'EMPLOYEE','S_EMPLOYEE')">
 						
 							<td>
-								<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')">
+								<security:authorize access="hasAnyRole('MANAGER', 'S_EMPLOYEE', 'EMPLOYEE')">
 									<!-- display the update link -->
 									<a href="${updateLink}">Update</a>
 								</security:authorize>
 	
-								<security:authorize access="hasAnyRole('MANAGER','ADMIN')">
+								<security:authorize access="hasAnyRole('MANAGER')">
 									<a href="${deleteLink}"
 									   onclick="if (!(confirm('Are you sure you want to delete this employee?'))) return false">Delete</a>
 								</security:authorize>
@@ -128,18 +117,7 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		</table>
 	
 		</div>
-		
-		<br>
-		<hr>
-		<a href="${pageContext.request.contextPath}/ticket/list" class=linkticket>Go to the ticket list</a>
-		
-		<br>
-			<!-- add a logout button -->
-	
-	<form:form action="${pageContext.request.contextPath}/logout" method="POST">
-	<input type="submit" value="Logout" class="logout"/>
-	</form:form>
-	
+
 	</div>
 	
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"

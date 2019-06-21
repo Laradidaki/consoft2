@@ -9,12 +9,12 @@ table {
 	border-collapse:collapse;
 	border-bottom:1px solid gray;
 	font-family: Tahoma,Verdana,Segoe,sans-serif;
-	width:70%;
+	width:100%;
 }
  
 th {
 	border-bottom:1px solid gray;
-	background:none repeat scroll 0 0 #210873;
+	background:none repeat scroll 0 0 #FFB112;
 	padding:10px;
 	color: #FFFFFF;
 }
@@ -28,13 +28,12 @@ tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #BBBBBB}	
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 70%; position:relative; left:12%; background: #210873; margin-top: 0px; padding:15px 0px 15px 15px;}
+#header {width: 100%; background: #FFB112; margin-top: 0px; padding:15px 0px 15px 15px;}
 #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}
 #container #content {margin-top: 20px;
-						position:relative;
-					left:12%;
+
 						}
 
 .add-button {
@@ -50,7 +49,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 	background: #cccccc;
 }
 .linkticket{
-	position:relative; left:12%;
+
 	text-decoration:none;
 	color:black;
 	font-size:20px;
@@ -60,11 +59,5 @@ tr:nth-child(odd) {background: #BBBBBB}
 	text-decoration:none;
 }
 
-.logout{
-	position:relative; left:12%;
-	margin-top:30px; 
-}
-.navbar{
-	position:relative; left:12%; width:70%;
-	margin-top:30px !important}
-}
+
+

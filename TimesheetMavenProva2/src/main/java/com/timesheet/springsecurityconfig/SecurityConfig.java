@@ -14,7 +14,7 @@ import org.springframework.security.provisioning.UserDetailsManager;
 
 @Configuration
 @EnableWebSecurity
-public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	//add a reference to security data source
 	@Autowired
@@ -32,9 +32,9 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests()
-			.antMatchers("/employee/showForm*").hasAnyRole("MANAGER", "ADMIN")
-			.antMatchers("/employee/save*").hasAnyRole("MANAGER", "ADMIN")
-			.antMatchers("/employee/delete").hasRole("ADMIN")
+			.antMatchers("/employee/showForm*").hasAnyRole("EMPLOYEE","MANAGER", "S_EMPLOYEE" )
+			.antMatchers("/employee/save*").hasAnyRole("EMPLOYEE", "MANAGER", "S_EMPLOYEE")
+			.antMatchers("/employee/delete").hasRole("MANAGER")
 			.antMatchers("/employee/**").hasRole("EMPLOYEE")
 			.antMatchers("/resources/**").permitAll()
 			.and()

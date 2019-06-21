@@ -6,14 +6,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" 
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+	crossorigin="anonymous">
 <meta charset="ISO-8859-1">
 <title>List Tickets</title>
+<style type="text/css">
+
+</style>
 <link type="text/css" rel="stylesheet" 
 href="${pageContext.request.contextPath}/resources/css/style.css"/>
 </head>
 <body>
+<jsp:include page="navbar.jsp" />
 <div id="wrapper">
-		<div id="header">
+		<div id="header" >
 			<h2>Tickets' list</h2>
 	
 		</div>
@@ -21,7 +29,7 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 	
 	<div id="container">
 	
-		<div id="content">
+		<div id="content" >
 		
 		          <!--  add a search box -->
             <form:form action="searchT" method="GET">
@@ -34,7 +42,7 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 				User: <security:authentication property="principal.username" />, Role(s): <security:authentication property="principal.authorities" />
 			</p>
 	
-			<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')">
+			<security:authorize access="hasAnyRole('MANAGER', 'S_EMPLOYEE')">
             
 		
 		<input type="button" value="Add Ticket"
@@ -46,6 +54,7 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		
 		<table>
 		<tr>
+		<th>ID Ticket</th>
 		<th>client</th>
 		<th>Start Date</th>
 		<th>Release Date</th>
@@ -59,10 +68,11 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		<th>Ticket Status</th>
 		<th>Ticket Source</th>
 		<th>Ticket Type</th>
+		<th>ID Manager</th>
 		
 		
 			<%-- Only show "Action" column for managers or admin --%>
-					<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')">
+					<security:authorize access="hasAnyRole('MANAGER', 'S_EMPLOYEE', 'EMPLOYEE')">
 					
 						<th>Action</th>
 					
@@ -82,6 +92,7 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		</c:url>
 		
 		<tr>
+		<td> ${tempTicket.idTicket} </td>
 		<td> ${tempTicket.client} </td>
 		<td> ${tempTicket.startDate} </td>
 		<td> ${tempTicket.releaseDate} </td>
@@ -95,16 +106,17 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		<td> ${tempTicket.ticketStatus} </td>
 		<td> ${tempTicket.ticketSource} </td>
 		<td> ${tempTicket.ticketType} </td>
+		<td> ${tempTicket.manager} </td>
 		
 			<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')">
 						
 							<td>
-								<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')">
+								<security:authorize access="hasAnyRole('MANAGER', 'S_EMPLOYEE')">
 									<!-- display the update link -->
 									<a href="${updateLink}">Update</a>
 								</security:authorize>
 	
-								<security:authorize access="hasAnyRole('MANAGER','ADMIN')">
+								<security:authorize access="hasAnyRole('MANAGER','S_EMPLOYEE')">
 									<a href="${deleteLink}"
 									   onclick="if (!(confirm('Are you sure you want to delete this ticket?'))) return false">Delete</a>
 								</security:authorize>
@@ -117,14 +129,18 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		</table>
 	
 		</div>
-		
-		<br>
-			<!-- add a logout button -->
-	
-	<form:form action="${pageContext.request.contextPath}/logout" method="POST">
-	<input type="submit" value="Logout"/>
-	</form:form>
-	
 	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
 </body>
 </html>

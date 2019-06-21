@@ -1,4 +1,5 @@
 package com.timesheet.entity;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +13,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="employee")
@@ -27,9 +29,6 @@ public class Employee {
 	
 	@Column(name="last_name")
 	private String lastName;
-	
-	@Column(name="client")
-	private String client;
 	
 	@Column(name="work_hours")
 	private Double workHours;
@@ -51,7 +50,6 @@ public class Employee {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.client = client;
 		this.workHours = workHours;
 	}
 
@@ -78,14 +76,6 @@ public class Employee {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public String getClient() {
-		return client;
-	}
-
-	public void setClient(String client) {
-		this.client = client;
 	}
 
 	public Double getWorkHours() {
@@ -116,11 +106,18 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + idEmployee + ", firstName=" + firstName + ", lastName=" + lastName + ", client=" + client
-				+ ", workHours=" + workHours + "]";
+		return "Employee [id=" + idEmployee + ", firstName=" + firstName + ", lastName=" + lastName + ", workHours=" + workHours + "]";
 	}
 
-	
+	public void addDetailTickets(Ticket tempTicket) {
+		
+		if(tickets == null) {
+			
+			tickets= new ArrayList<Ticket>();
+			
+		}
+		tickets.add(tempTicket);
+	}
 	
 }
 

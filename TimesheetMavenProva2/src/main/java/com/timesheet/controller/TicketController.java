@@ -30,7 +30,6 @@ public class TicketController {
 		
 		return "list-tickets";
 	}
-
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAddTicket(Model theModel) {

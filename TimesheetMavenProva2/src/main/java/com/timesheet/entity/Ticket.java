@@ -101,6 +101,27 @@ public class Ticket {
 		this.ticketType = ticketType;
 	}
 
+	
+
+	public Ticket( String client, String referenceApplication, Double estimate, String description,
+			Double totWorkingHours, String productionOrder, String note, String priority, String ticketStatus,
+			String ticketSource, String ticketType) {
+		super();
+	
+		this.client = client;
+		this.referenceApplication = referenceApplication;
+		this.estimate = estimate;
+		this.description = description;
+		this.totWorkingHours = totWorkingHours;
+		this.productionOrder = productionOrder;
+		this.note = note;
+		this.priority = priority;
+		this.ticketStatus = ticketStatus;
+		this.ticketSource = ticketSource;
+		this.ticketType = ticketType;
+
+	}
+
 	public Integer getIdTicket() {
 		return idTicket;
 	}
