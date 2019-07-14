@@ -61,7 +61,7 @@ href="${pageContext.request.contextPath}/resources/html/navbar.html"/>
 		<th>Last name</th>
 		<th>First name</th>
 		<th>Work hours</th>
-		<th>ID Manager</th>
+		
 		
 		
 			<%-- show "Action" column for managers,employees and "special" employees --%>
@@ -94,7 +94,7 @@ href="${pageContext.request.contextPath}/resources/html/navbar.html"/>
 		<td> ${tempEmployee.lastName} </td>
 		<td> ${tempEmployee.firstName} </td>
 		<td> ${tempEmployee.workHours} </td>
-		<td> ${tempEmployee.manager} </td>
+		
 		
 			<security:authorize access="hasAnyRole('MANAGER', 'EMPLOYEE','S_EMPLOYEE')">
 						

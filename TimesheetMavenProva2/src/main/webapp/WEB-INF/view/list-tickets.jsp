@@ -54,7 +54,6 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		
 		<table>
 		<tr>
-		<th>ID Ticket</th>
 		<th>client</th>
 		<th>Start Date</th>
 		<th>Release Date</th>
@@ -68,7 +67,7 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		<th>Ticket Status</th>
 		<th>Ticket Source</th>
 		<th>Ticket Type</th>
-		<th>ID Manager</th>
+		
 		
 		
 			<%-- Only show "Action" column for managers or admin --%>
@@ -92,7 +91,6 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		</c:url>
 		
 		<tr>
-		<td> ${tempTicket.idTicket} </td>
 		<td> ${tempTicket.client} </td>
 		<td> ${tempTicket.startDate} </td>
 		<td> ${tempTicket.releaseDate} </td>
@@ -106,7 +104,7 @@ href="${pageContext.request.contextPath}/resources/css/style.css"/>
 		<td> ${tempTicket.ticketStatus} </td>
 		<td> ${tempTicket.ticketSource} </td>
 		<td> ${tempTicket.ticketType} </td>
-		<td> ${tempTicket.manager} </td>
+	
 		
 			<security:authorize access="hasAnyRole('MANAGER', 'ADMIN')">
 						
