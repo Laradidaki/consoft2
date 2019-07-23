@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+li{
+	
+	color:indigo;
+	font-size: 20px;
+	float:right;
+	margin-right:20px;
+	margin-top:30px;
+}
+
+a{
+	font-family: 'Indie Flower', cursive;
+}
+
+.navbar-nav{
+	margin-bottom:5px !important;
+}
+
+ul{    padding-inline-start: 20px !important;
+}

@@ -11,11 +11,11 @@
 <script>
 $.validator.setDefaults({
     submitHandler: function() {
-      alert("提交事件!");
+      alert("boh");
     }
 });
 $().ready(function() {
-// 在键盘按下并释放及提交后验证提交表单
+
   $("#signupForm").validate({
 	    rules: {
 	      firstname: "required",
@@ -44,22 +44,22 @@ $().ready(function() {
 	      agree: "required"
 	    },
 	    messages: {
-	      firstname: "请输入您的名字",
-	      lastname: "请输入您的姓氏",
+	      firstname: "Lara",
+	      lastname: "Corona",
 	      username: {
-	        required: "请输入用户名",
-	        minlength: "用户名必需由两个字母组成"
+	        required: "true",
+	        minlength: "8"
 	      },
 	      password: {
-	        required: "请输入密码",
-	        minlength: "密码长度不能小于 5 个字母"
+	        required: "true",
+	        minlength: "8"
 	      },
 	      confirm_password: {
-	        required: "请输入密码",
-	        minlength: "密码长度不能小于 5 个字母",
-	        equalTo: "两次密码输入不一致"
+	        required: "true",
+	        minlength: "8",
+	        equalTo: "password"
 	      },
-	      agree: "请接受我们的声明",
+	      agree: "required",
 	    }
 	});
 });
@@ -74,25 +74,25 @@ $().ready(function() {
 
 <form class="cmxform" id="signupForm" method="get" action="">
   <fieldset>
-    <legend>验证完整的表单</legend>
+    <legend></legend>
     <p>
-      <label for="firstname">名字</label>
+      <label for="firstname">nome</label>
       <input id="firstname" name="firstname" type="text">
     </p>
     <p>
-      <label for="lastname">姓氏</label>
+      <label for="lastname">cognome</label>
       <input id="lastname" name="lastname" type="text">
     </p>
     <p>
-      <label for="username">用户名</label>
+      <label for="username">username</label>
       <input id="username" name="username" type="text">
     </p>
     <p>
-      <label for="password">密码</label>
+      <label for="password">password</label>
       <input id="password" name="password" type="password">
     </p>
     <p>
-      <label for="confirm_password">验证密码</label>
+      <label for="confirm_password">conferma password</label>
       <input id="confirm_password" name="confirm_password" type="password">
     </p>
     <p>
@@ -100,11 +100,11 @@ $().ready(function() {
       <input id="email" name="email" type="email">
     </p>
     <p>
-      <label for="agree">请同意我们的声明</label>
+      <label for="agree">consenso</label>
       <input type="checkbox" class="checkbox" id="agree" name="agree">
     </p>
     <p>
-      <input class="submit" type="submit" value="提交">
+      <input class="submit" type="submit" value="invia">
     </p>
   </fieldset>
 </form>
