@@ -13,11 +13,17 @@ public class DbConnection {
 	private static Connection connection = null;
 	
 	public static Connection getConnection() {
+		
+		//INIZIO PARTE MODIFICATA DA ANDREA PER EVITARE DI CREARE E CARICARE IL FILE .PROPERTIES
+		
 		if (connection != null) {
 			return connection;
 		}else {
 			String driver = "com.mysql.cj.jdbc.Driver";
 			String url ="jdbc:mysql://localhost:3306/cinema?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+			
+			//FINE PARTE MODIFICATA DA ANDREA
+			
 			try {
 				Class.forName(driver);
 				connection = DriverManager.getConnection(url,"root","");

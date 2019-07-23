@@ -23,6 +23,9 @@ public class UpdateAttore extends HttpServlet {
 	attore.setNomeAttore(request.getParameter("nomeAttore"));
     attore.setCognomeAttore(request.getParameter("cognomeAttore"));
     attore.setEtaAttore(Integer.parseInt((String)request.getParameter("etaAttore")));
+    
+    //PARTE MODIFICATA DA ANDREA
+    
     try {
 		AttoreDao att = new AttoreDao();
 		att.updateAttore(attore);

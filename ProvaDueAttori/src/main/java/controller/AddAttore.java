@@ -24,6 +24,9 @@ public class AddAttore extends HttpServlet {
 		a.setNomeAttore(request.getParameter("nomeAtt"));
 		a.setCognomeAttore(request.getParameter("cognomeAtt"));
 		a.setEtaAttore(Integer.parseInt((String)request.getParameter("etaAtt")));
+		
+		//INIZIO PARTE MODIFICATA DA ANDREA
+		
 		try {
 			AttoreDao att = new AttoreDao();
 			att.addAttore(a);
