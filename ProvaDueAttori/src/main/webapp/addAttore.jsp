@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home</title>
+<title>Nuovo Attore</title>
 </head>
 <body>
-<a href="elencoAttori">Aggiungi Film</a>
+<a href="elencoAttori">Aggiungi Attore</a>
 
 <form action="addAttore" method="GET" id=add>
 <input name="nomeAtt" id="nomeAtt">
